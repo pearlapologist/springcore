@@ -4,15 +4,19 @@
        xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
-   <context:property-placeholder location="classpath:musicPlayer.properties"/>
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id="musicBean"
-          class="org.example.ClassicalMusic">
+          class="org.example.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+    factory-method="getClassicalMusic"
+    >
     </bean>
-    <bean id="musicPlayer" class="org.example.MusicPlayer"
-    scope="prototype">
-        <property name="music" ref="musicBean"/>
+    <!--  <bean id="musicPlayer" class="org.example.MusicPlayer"
+      scope="prototype">
+          <property name="music" ref="musicBean"/>
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+          <property name="name" value="${musicPlayer.name}"/>
+          <property name="volume" value="${musicPlayer.volume}"/>
+      </bean>-->
 </beans>
