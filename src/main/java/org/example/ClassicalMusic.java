@@ -6,16 +6,10 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 public class ClassicalMusic implements Music {
     public String getSong() {
         return "Hungarian Rhapsody";
-    }
-
-    private ClassicalMusic(){}
-
-    public static ClassicalMusic getClassicalMusic(){
-        return new ClassicalMusic();
     }
 
     @PostConstruct
