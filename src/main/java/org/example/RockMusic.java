@@ -2,10 +2,10 @@ package org.example;
 
 import org.springframework.stereotype.Component;
 
-@Component()
+@Component
 public class RockMusic implements Music{
     @Override
     public String getSong() {
-        return "Wing cries Mary";
+        return "Wind cries Mary";
     }
 }

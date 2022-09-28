@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClassicalMusic implements Music {
     public String getSong() {
-        return "Hungarian Rapsody";
+        return "Hungarian Rhapsody";
     }
 
     private ClassicalMusic(){}
